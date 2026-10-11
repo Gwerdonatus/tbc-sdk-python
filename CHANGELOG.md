@@ -14,6 +14,7 @@ project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 ### Fixed
 
 - Exempt the Django callback examples from CSRF checks so TBC callbacks are not rejected with HTTP 403.
+- Validate `PaymentRequest.methods` enum members and reject `bool`/non-int `quantity` in `InstallmentProduct`; callers that previously passed raw integer payment-method values or boolean quantities will now receive a `TypeError`.
 
 ## [0.3.2] - 2026-10-02
 
